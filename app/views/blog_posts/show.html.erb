@@ -1,0 +1,16 @@
+<%= link_to "Back to all blog posts", blog_posts_path, class:"back-link"%>
+
+<div class="blog-post-card">
+  <h2><%= @blog_post.title %></h2>
+  <p><%= @blog_post.body %></p>
+
+  <p>
+    <%= link_to "edit", edit_blog_post_path(@blog_post) %>
+
+    <%= form_with url: blog_post_path(@blog_post), method: :delete, data: { controller: "deletemodal" } do %>
+      <%= submit_tag "Delete", class: "delete-button" %>
+    <% end %>
+  </p>
+</div>
+
+

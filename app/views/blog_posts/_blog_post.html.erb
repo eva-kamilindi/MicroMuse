@@ -1,0 +1,13 @@
+<div class="blog-post-card">
+  <h2><%= @blog_post.title %></h2>
+  <p><%= @blog_post.body %></p>
+
+  <p>
+    <%= link_to "Back", blog_posts_path, class: "btn btn-secondary" %>
+    <%= link_to "Edit", edit_blog_post_path(@blog_post), class: "btn btn-primary" %>
+
+    <%= form_with url: blog_post_path(@blog_post), method: :delete, data: { controller: "deletemodal" } do %>
+      <%= submit_tag "Delete", class: "btn btn-danger" %>
+    <% end %>
+  </p>
+</div>

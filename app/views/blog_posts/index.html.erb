@@ -1,0 +1,40 @@
+<p style="color: green"><%= notice %></p>
+
+<% content_for :title, "Blog posts" %>
+
+<h1>Blog posts</h1>
+
+<div id="blog_posts">
+  <% @blog_posts.each do |blog_post| %>
+    <div class="blog-post-card">
+      
+      <h2><%= blog_post.title %></h2>
+      
+      <!-- truncated body -->
+      <p class="post-body">
+        <%= truncate(blog_post.body, length: 150) %>
+      </p>
+
+      <!-- More link -->
+      <%= link_to blog_post_path(blog_post), class: "read-more" do %>
+        <i class="fas fa-eye"></i>
+      <% end %>
+
+      <!-- edit/delete buttons, visible only on hover -->
+      <div class="actions">
+        <%= link_to edit_blog_post_path(blog_post), class: "btn btn-primary" do %>
+          <i class="fas fa-edit"></i>
+        <% end %>
+
+        <%= form_with url: blog_post_path(blog_post), method: :delete, data: { controller: "deletemodal" } do %>
+          <button>
+            <i class="fas fa-trash"></i>
+          </button>
+        <% end %>
+      </div>
+      
+    </div>
+  <% end %>
+</div>
+
+<%= link_to "New blog post", new_blog_post_path, class: "new-post-link" %>

@@ -1,0 +1,213 @@
+/* Body styling */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #181414;
+  color: #d8cccc;
+  margin: 0;
+  padding: 0 20px;
+  align-items: center;
+}
+
+/* Header */
+h1, h2, h3 {
+  color: #85b2df;
+  margin: 0 0 10px 0;
+}
+
+/* Blog post card */
+.blog-post-card {
+  border: 1px solid #1f1e1e;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+  background-color: #000000;
+  box-shadow: 0 2px 4px rgba(6, 1, 34, 0.05);
+  transition: all 0.2s ease;
+}
+
+.blog-post-card:hover {
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  transform: scale(1.01);
+}
+
+/* Post title */
+.blog-post-card h2 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  color: #0053fa;
+}
+
+/* Post body truncation for index */
+.blog-post-card p.post-body {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 10px;
+}
+
+/* "Read more" link */
+.blog-post-card a.read-more {
+  color: #3498db;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.blog-post-card a.read-more:hover {
+  color: #2980b9;
+}
+
+/* Action icons (edit, delete) */
+.blog-post-card .actions {
+  display: flex;
+  gap: 10px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.blog-post-card:hover .actions {
+  opacity: 1;
+}
+
+.blog-post-card .actions button,
+.blog-post-card .actions a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  background-color: #222; /* dark button background */
+  color: white;
+  font-size: 16px;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+}
+
+.blog-post-card .actions button:hover,
+.blog-post-card .actions a:hover {
+  background-color: #444;
+}
+
+/* css for the back link */
+.back-link {
+  display: inline-block;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  padding: 8px 12px;
+  background-color: #7f8c8d; /* gray button */
+  color: white;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.2s ease;
+}
+
+.back-link:hover {
+  background-color: #606f70;
+}
+
+
+/* Specific colors for buttons */
+.blog-post-card .actions .edit-btn {
+  background-color: #3498db;
+}
+
+.blog-post-card .actions .edit-btn:hover {
+  background-color: #2980b9;
+}
+
+.blog-post-card .actions .delete-btn {
+  background-color: #e74c3c;
+}
+
+.blog-post-card .actions .delete-btn:hover {
+  background-color: #bd1a1a;
+}
+
+/* New post button */
+.new-post-link {
+  display: inline-block;
+  margin-bottom: 20px;
+  padding: 10px 15px;
+  background-color: #3498db;
+  color: white;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.new-post-link:hover {
+  background-color: #2980b9;
+}
+
+/* Modal overlay */
+.confirm-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+/* Hidden by default */
+.hidden {
+  display: none;
+}
+
+/* Modal content box */
+.confirm-modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  max-width: 400px;
+}
+
+.confirm-modal-content button {
+  margin: 10px;
+  padding: 8px 15px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+
+#confirm-yes {
+  background-color: #e74c3c;
+  color: white;
+}
+
+#confirm-no {
+  background-color: #3498db;
+  color: white;
+}
+
+/* Inline form helper */
+.inline-form {
+  display: inline;
+}
+
+/* Mobile / responsive */
+#blog_posts {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+
+.blog-post-card {
+  width: 100%;
+  max-width: 600px;
+}
+.new-post-link {
+  margin-top: 20px;
+}
