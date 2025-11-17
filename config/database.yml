@@ -15,3 +15,7 @@ production:
   <<: *default
   adapter: postgresql
   url: <%= ENV['DATABASE_URL'] %>
+
+cable:
+<<: *default
+  database: <%= ENV["DATABASE_URL"]%>
